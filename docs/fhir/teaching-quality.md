@@ -87,3 +87,7 @@ Prioritize blockers that prevent completion or reveal incorrect answer keys. Rev
 ## Source still needed
 
 > TODO(abdel): source needed for beta attempt observations and timing evidence before claiming calibrated lesson durations, completed learner feedback or validated capstone thresholds.
+
+## Source acquisition update (2026-10-02)
+
+The user subsequently requested external sources. See `source-acquisition.md`, `source-gap-status.md` and `external-source-inventory.md` for newly acquired primary references, pinned code and synthetic assets. The earlier source-only findings and callouts above remain a historical checkpoint. Retrieval is not lesson verification.

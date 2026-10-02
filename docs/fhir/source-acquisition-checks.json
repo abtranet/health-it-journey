@@ -1,0 +1,19 @@
+{
+  "acquiredOn": "2026-10-02",
+  "primaryReferencesChecked": 39,
+  "http200": 39,
+  "repositoryRevisionsPinned": 9,
+  "archivedRepositories": 2,
+  "unmodifiedUpstreamExtracts": 39,
+  "sourceFilesInventoried": 68,
+  "syntheticFhirResources": 466,
+  "pairedJsonXmlParse": "pass",
+  "demographicCheck": "first given/family/birth match; extra FHIR given name absent from C-CDA",
+  "assetHashes": "pass",
+  "originalAttachmentIdentityValuesAbsent": "pass",
+  "originalTodosMapped": 14,
+  "lessonContentCreated": false,
+  "fullR4ValidationPerformed": false,
+  "sandboxWrites": 0,
+  "endToEndCourseTestsPerformed": false
+}

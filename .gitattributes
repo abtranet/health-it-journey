@@ -1,0 +1,4 @@
+# Preserve byte-for-byte upstream references and synthetic source fixtures.
+course-source/external/hl7-r4/** -whitespace
+course-source/external/upstream/** -whitespace
+course-source/external/synthea/** -whitespace

@@ -54,3 +54,7 @@ The 17 lesson sections contain 8,819 words, about 44 minutes of reading at 200 w
 - `teaching-quality.md`: authoring and assessment requirements incorporating the ten requested standards.
 - `source-manifest.json` and `verification-review.json`: reproducible source identity and safe read-only endpoint observations.
 - `todo-index.md`: exact file/line index of source-needed callouts.
+
+## Source acquisition update (2026-10-02)
+
+The user subsequently requested external sources. See `source-acquisition.md`, `source-gap-status.md` and `external-source-inventory.md` for newly acquired primary references, pinned code and synthetic assets. The earlier source-only findings and callouts above remain a historical checkpoint. Retrieval is not lesson verification.

@@ -61,3 +61,29 @@ Every lesson needs three to five observable objective bullets, pain before the m
 The first draft must retain `TODO(abdel)` callouts for missing source. Estimated study time will combine finished reading and measured exercise work; there is no video-time claim. `lastVerified` remains null until the actual task and answer key pass in the recorded environment. Shared source paths must point to approved, sanitized repository assets rather than an uncommitted Downloads path.
 
 See `teaching-quality.md` for the proposed capstone rubric, verification cadence and beta feedback plan; see `gap-review.md` for which old source gaps this attachment now fills. Review this proposal before content authoring. No lesson files, app changes, deployment or public sandbox writes belong to this checkpoint.
+
+## Acquired source supplement (2026-10-02)
+
+The later request to find sources adds the primary materials in `source-acquisition.md` and the repository source package. Earlier rows retain the original attachment ranges. Use both those drafts and the following sources when authoring after outline review. Acquisition does not supply course run results, complete cumulative projects or beta observations.
+
+| Unit | Additional source IDs / assets |
+| --- | --- |
+| F01 | E01,E05; MITRE synthetic R4 fixture; pinned Synthea generator |
+| F02 | E03,E10,E36; controlled Observation records and client-js |
+| F03 | E02,E04; synthetic transaction Bundle as an input, not proof of retry correctness |
+| F04 | E21,E30-E33; retained NLM version/corrected coding responses |
+| F05 | E02,E06-E09; Microsoft ADT templates; bounded synthetic messages still need authoring |
+| F06 | E07,E24,E25; converter Provenance source and synthetic Provenance |
+| F07 | E03,E06,E07,E10,E12; synthetic Observation/DiagnosticReport records |
+| F08 | E13,E14; selected server behavior still needs execution evidence |
+| F09 | E15-E17,E30,E31; synthetic MedicationRequest/Administration and corrected NLM products |
+| F10 | E05,E18,E39; MITRE synthetic C-CDA and Microsoft R4 extraction candidate; document/Composition behavior still requires verification |
+| F11 | E19,E20,E36; SMART client-js and MITRE example app |
+| F12 | E21,E22,E30-E33; target terminology release/maps remain implementation checks |
+| F13 | E27-E29; published policy examples need a bounded course test contract |
+| F14 | E23; SMART bulk-data-server, with its distinct data/REST limitations |
+| F15 | E26; HAPI JPA starter REST-hook configuration |
+| F16 | E03,E19,E20,E34,E36; actual EHR access/launch remains untested |
+| F17 | All relevant earlier sources, especially E02,E06-E12,E23-E29; the order/result mappings now exist but the demo flow remains implementation work |
+
+Source availability now supports selecting a sourced R4 document-conversion path and order/result mapping instead of leaving those items without reference material. The other earlier scope boundaries remain until their source-specific fixtures and checks exist. Keep `lastVerified` null and unsupported marketing features disabled.

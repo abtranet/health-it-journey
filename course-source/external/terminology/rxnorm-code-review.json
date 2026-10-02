@@ -1,0 +1,61 @@
+{
+  "retrievedOn": "2026-10-02",
+  "versionUrl": "https://rxnav.nlm.nih.gov/REST/version.json",
+  "version": {
+    "version": "08-Sep-2026",
+    "apiVersion": "3.1.355"
+  },
+  "lookups": [
+    {
+      "queryUrl": "https://rxnav.nlm.nih.gov/REST/drugs.json?name=acetaminophen",
+      "nameRequested": "Acetaminophen 325 MG Oral Tablet",
+      "match": {
+        "rxcui": "313782",
+        "name": "acetaminophen 325 MG Oral Tablet",
+        "synonym": "APAP 325 MG Oral Tablet",
+        "tty": "SCD",
+        "language": "ENG",
+        "suppress": "N",
+        "umlscui": ""
+      },
+      "confirmationUrl": "https://rxnav.nlm.nih.gov/REST/rxcui/313782/properties.json",
+      "confirmedProperties": {
+        "properties": {
+          "rxcui": "313782",
+          "name": "acetaminophen 325 MG Oral Tablet",
+          "synonym": "APAP 325 MG Oral Tablet",
+          "tty": "SCD",
+          "language": "ENG",
+          "suppress": "N",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "queryUrl": "https://rxnav.nlm.nih.gov/REST/drugs.json?name=lisinopril",
+      "nameRequested": "lisinopril 10 MG Oral Tablet",
+      "match": {
+        "rxcui": "314076",
+        "name": "lisinopril 10 MG Oral Tablet",
+        "synonym": "",
+        "tty": "SCD",
+        "language": "ENG",
+        "suppress": "N",
+        "umlscui": ""
+      },
+      "confirmationUrl": "https://rxnav.nlm.nih.gov/REST/rxcui/314076/properties.json",
+      "confirmedProperties": {
+        "properties": {
+          "rxcui": "314076",
+          "name": "lisinopril 10 MG Oral Tablet",
+          "synonym": "",
+          "tty": "SCD",
+          "language": "ENG",
+          "suppress": "N",
+          "umlscui": ""
+        }
+      }
+    }
+  ],
+  "scope": "Coding identity checks, not drug selection or dosing guidance"
+}

@@ -1,0 +1,68 @@
+{
+  "retrievedOn": "2026-10-02",
+  "publisher": "MITRE / Synthea",
+  "provenanceUrl": "https://synthetichealth.github.io/downloads.html",
+  "dataReuse": "Publisher states synthetic data may be used without restriction; retain citation",
+  "archives": {
+    "fhir": {
+      "url": "https://synthetichealth.github.io/synthea-sample-data/downloads/latest/synthea_sample_data_fhir_latest.zip",
+      "archiveBytes": 29595199,
+      "archiveSha256": "56cb9e49f7ba6ad4e61c40aa80999f8c10a710823fed1becdf2502053777a521",
+      "memberCount": 111
+    },
+    "ccda": {
+      "url": "https://synthetichealth.github.io/synthea-sample-data/downloads/latest/synthea_sample_data_ccda_latest.zip",
+      "archiveBytes": 4866086,
+      "archiveSha256": "cac8f607b8acd56d38b69a3a8fd4877b3606e37ce486a670c8c232f2e0c4719d",
+      "memberCount": 108
+    }
+  },
+  "selected": {
+    "fhirMember": "Alexandra16_Mosciski958_37549f60-b5a3-69cd-dea6-5a71c4bc23cf.json",
+    "fhirSha256": "d9e1d80cc9b1f11d28a97257c32c513efff47a005c874338b46e0fa68b664adc",
+    "resourceType": "Bundle",
+    "bundleType": "transaction",
+    "resources": 466,
+    "resourceCounts": {
+      "AllergyIntolerance": 1,
+      "CarePlan": 2,
+      "CareTeam": 2,
+      "Claim": 44,
+      "Condition": 25,
+      "Device": 2,
+      "DiagnosticReport": 54,
+      "DocumentReference": 31,
+      "Encounter": 31,
+      "ExplanationOfBenefit": 44,
+      "ImagingStudy": 1,
+      "Immunization": 8,
+      "Medication": 5,
+      "MedicationAdministration": 5,
+      "MedicationRequest": 13,
+      "Observation": 126,
+      "Patient": 1,
+      "Procedure": 58,
+      "Provenance": 1,
+      "SupplyDelivery": 12
+    },
+    "syntheticProvenance": "MITRE Synthea official sample-data distribution; https://synthetichealth.github.io/downloads.html",
+    "generatorSeed": "not provided by upstream sample distribution",
+    "generatorCommit": "not established from archive",
+    "matchingCcdaStemFound": true,
+    "ccdaMember": "Alexandra16_Mosciski958_37549f60-b5a3-69cd-dea6-5a71c4bc23cf.xml",
+    "ccdaSha256": "545bd2180fc48b7d8d55f5cbfb1b1b4eeffb8ccdf0856042f5525ca4495f8d36"
+  },
+  "crossFormatChecks": {
+    "firstGivenMatches": true,
+    "familyMatches": true,
+    "birthDateMatches": true,
+    "fullGivenRepresentationMatches": false,
+    "givenRepresentationNote": "FHIR has an additional given name absent from the corresponding C-CDA; preserve the difference when assessing conversion."
+  },
+  "localFiles": [
+    "course-source/external/synthea/synthea-patient-r4.json",
+    "course-source/external/synthea/synthea-patient-ccda.xml"
+  ],
+  "validationStatus": "JSON/XML parse and provenance checked; no full R4/C-CDA/terminology validator run; fixture may contain actual facility/provider labels and identifiers",
+  "publishInLessonStatus": "Review/remap institution, practitioner, reference and identifier values before incorporating into authored lesson examples"
+}

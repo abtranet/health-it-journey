@@ -87,3 +87,7 @@ Do not set price, completed learner counts, completion certificates or test resu
 > TODO(abdel): source needed for complete cumulative starter/solution projects, run instructions and acceptance evidence; existing snippets and pseudocode are not implementation assets.
 
 > TODO(abdel): source needed for dated primary evidence before retaining version-adoption, vendor-deprecation, sandbox-population, certificate, community, reviews, bundle or tax claims.
+
+## Source acquisition update (2026-10-02)
+
+The user subsequently requested external sources. See `source-acquisition.md`, `source-gap-status.md` and `external-source-inventory.md` for newly acquired primary references, pinned code and synthetic assets. The earlier source-only findings and callouts above remain a historical checkpoint. Retrieval is not lesson verification.
