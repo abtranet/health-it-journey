@@ -1,0 +1,559 @@
+{
+  "reviewDate": "2026-10-01",
+  "sourceRootLabel": "HL7_Exam_Prep",
+  "files": [
+    {
+      "path": ".DS_Store",
+      "bytes": 10244,
+      "sha256": "d9c6a9881b0fa816000fc3df18be62fc4775ccd3e26a871341041ddbc144cb00",
+      "extension": "",
+      "id": "S01"
+    },
+    {
+      "path": "2025 HL7 Strategic Vision FINAL June 2025_for Publication.pdf",
+      "bytes": 794508,
+      "sha256": "353de53faf2dda462b50e32b3e9b99c5f3cdd46cef3fd7c5e32c7fe007acb3df",
+      "extension": ".pdf",
+      "pages": 16,
+      "words": 4975,
+      "empty_pages": [],
+      "id": "S02"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_Appendix_A_2024SEP.pdf",
+      "bytes": 18539042,
+      "sha256": "61fa4eb417a2667ac2fcaa8bfd733212be1aa82fb15e469fc6e7bd6b46a613c1",
+      "extension": ".pdf",
+      "pages": 305,
+      "words": 90935,
+      "empty_pages": [],
+      "id": "S03"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_Appendix_B_2024SEP.pdf",
+      "bytes": 154426,
+      "sha256": "cc61913b7afe246be10dc606b9a7a42dadd9e73570f345c33a7c8633a96bf312",
+      "extension": ".pdf",
+      "pages": 1,
+      "words": 64,
+      "empty_pages": [],
+      "id": "S04"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_Appendix_C_2024SEP.pdf",
+      "bytes": 651642,
+      "sha256": "e99292a0c0bc2097746880dce35f8346b1b6deb0ce14acf09fc5a64a3804d766",
+      "extension": ".pdf",
+      "pages": 54,
+      "words": 20168,
+      "empty_pages": [],
+      "id": "S05"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_Appendix_D_2024SEP.pdf",
+      "bytes": 463078,
+      "sha256": "fbbb7bb3cf81b26e79189d86f0fa8c9ae0ce116b752d909d002601e689dc9ce9",
+      "extension": ".pdf",
+      "pages": 28,
+      "words": 10491,
+      "empty_pages": [],
+      "id": "S06"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_Appendix_E_2024SEP.pdf",
+      "bytes": 894458,
+      "sha256": "1d30373c57fe3e42e3fd58ddb67ef4fcac86f419723c99d8451cfc18e169c26f",
+      "extension": ".pdf",
+      "pages": 41,
+      "words": 17816,
+      "empty_pages": [],
+      "id": "S07"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH01_Intro_2024SEP.pdf",
+      "bytes": 702537,
+      "sha256": "8006e3a57c7a922ada06677b6cd034adeaf1f7515e5f4c01ea99e522b57e731b",
+      "extension": ".pdf",
+      "pages": 26,
+      "words": 14813,
+      "empty_pages": [],
+      "id": "S08"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH02A_DataTypes_2024SEP.pdf",
+      "bytes": 2450967,
+      "sha256": "63ffc6b81dc48ba4bafd2943e2acc040136203ebbeaa79ccfefc778c08dc3aab",
+      "extension": ".pdf",
+      "pages": 108,
+      "words": 49851,
+      "empty_pages": [],
+      "id": "S09"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH02B_Conformance_2024SEP.pdf",
+      "bytes": 186070,
+      "sha256": "38d21b52880d092dfb1d384902e8485efe062b79e42a89f02c82754102ff31aa",
+      "extension": ".pdf",
+      "pages": 1,
+      "words": 248,
+      "empty_pages": [],
+      "id": "S10"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH02C_Tables_2024SEP.pdf",
+      "bytes": 29410752,
+      "sha256": "24451bba21c56c30cf19019a627e87578a702b9011d3b0c3fd4e8f081f905d96",
+      "extension": ".pdf",
+      "pages": 867,
+      "words": 221784,
+      "empty_pages": [],
+      "id": "S11"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH02_Control_2024SEP.pdf",
+      "bytes": 1833150,
+      "sha256": "8712935cbae96ee13b541adce907408954c2f9929e130059f617bacbecd0a5de",
+      "extension": ".pdf",
+      "pages": 94,
+      "words": 44809,
+      "empty_pages": [],
+      "id": "S12"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH03_PatientAdmin_2024SEP.pdf",
+      "bytes": 4921201,
+      "sha256": "9e17f55d895cfc27eba22fb5bc21db8fdecc744f7185d214b76ce3e888295aba",
+      "extension": ".pdf",
+      "pages": 258,
+      "words": 110710,
+      "empty_pages": [],
+      "id": "S13"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH04A_Orders_2024SEP.pdf",
+      "bytes": 2451142,
+      "sha256": "15283565f86e3c518b763bc3bb0e1c237b15e7867964fdc1daa1c781878b585f",
+      "extension": ".pdf",
+      "pages": 123,
+      "words": 53160,
+      "empty_pages": [],
+      "id": "S14"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH04_Orders_2024SEP.pdf",
+      "bytes": 3970626,
+      "sha256": "6f8f2efa718a4ea2fea9cd72c1e562e68ce2dc74fefb895f97eb9bbcd07b2de3",
+      "extension": ".pdf",
+      "pages": 191,
+      "words": 77968,
+      "empty_pages": [],
+      "id": "S15"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH05_Queries_2024SEP.pdf",
+      "bytes": 2645286,
+      "sha256": "ad2df26c3e8a9bf1f1b7f383e7042ae374f14f104668d99aaf1a7baa8fe5d0cb",
+      "extension": ".pdf",
+      "pages": 109,
+      "words": 42043,
+      "empty_pages": [],
+      "id": "S16"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH06_FinancialMngmt_2024SEP.pdf",
+      "bytes": 2910194,
+      "sha256": "d899dec53ad2d3910b68b70224a29a2051ddef9348325792740023697662cace",
+      "extension": ".pdf",
+      "pages": 156,
+      "words": 80379,
+      "empty_pages": [],
+      "id": "S17"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH07_Observations_2024SEP.pdf",
+      "bytes": 3389960,
+      "sha256": "3e88a5bbe3629d936c82076121c717ef3d1aff921be6587e0f3199e0a773e7ce",
+      "extension": ".pdf",
+      "pages": 188,
+      "words": 85988,
+      "empty_pages": [],
+      "id": "S18"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH08_MasterFiles_2024SEP.pdf",
+      "bytes": 2546660,
+      "sha256": "8c6d957a16659c6ecff416f40411e01fcb9b6172dd3d3acea8bae333fbbf7b07",
+      "extension": ".pdf",
+      "pages": 128,
+      "words": 60415,
+      "empty_pages": [],
+      "id": "S19"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH09_MedRecords_2024SEP.pdf",
+      "bytes": 1253756,
+      "sha256": "3f0e6819ebe39ea9f4f384f9507497b9583041ab6f6332d5e76f1406314e4ee4",
+      "extension": ".pdf",
+      "pages": 46,
+      "words": 18969,
+      "empty_pages": [],
+      "id": "S20"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH10_Scheduling_2024SEP.pdf",
+      "bytes": 1434713,
+      "sha256": "9a8373b0bf157269d924849e73fd554181a88b7a3fe1b9b82071208182585d91",
+      "extension": ".pdf",
+      "pages": 76,
+      "words": 41054,
+      "empty_pages": [],
+      "id": "S21"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH11_PatientReferral_2024SEP.pdf",
+      "bytes": 1984386,
+      "sha256": "c338d458604339ddf4884cb0319a10afe276dcd3c83a3736e46ef5ba9c9cbb5b",
+      "extension": ".pdf",
+      "pages": 86,
+      "words": 32781,
+      "empty_pages": [],
+      "id": "S22"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH12_PatientCare_2024SEP.pdf",
+      "bytes": 1172295,
+      "sha256": "e6438183093ca9553d9e4f0b7f71ad103fed7f3a9a61c387bf12aeba0811dd33",
+      "extension": ".pdf",
+      "pages": 42,
+      "words": 17475,
+      "empty_pages": [],
+      "id": "S23"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH13_ClinicalLabAuto_2024SEP.pdf",
+      "bytes": 1712948,
+      "sha256": "08c452a26120ca8b3bef54585341ed48db6f1faae5d58508c82bace4c0436b1e",
+      "extension": ".pdf",
+      "pages": 67,
+      "words": 27275,
+      "empty_pages": [],
+      "id": "S24"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH14_AppMngmt_2024SEP.pdf",
+      "bytes": 555358,
+      "sha256": "24367e1b34693ebf808dbd3f18abf14da61aacfa95c505af85aee333acee0315",
+      "extension": ".pdf",
+      "pages": 9,
+      "words": 3415,
+      "empty_pages": [],
+      "id": "S25"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH15_PersMngmt_2024SEP.pdf",
+      "bytes": 1309819,
+      "sha256": "a74d7ccd40596df0fdb252532f894990e828ec32643d3ca41a0e7abd7d8974a5",
+      "extension": ".pdf",
+      "pages": 51,
+      "words": 23276,
+      "empty_pages": [],
+      "id": "S26"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH16_eClaims_2024SEP.pdf",
+      "bytes": 1360257,
+      "sha256": "26a3e4a98e05f626b01d252610daa1f8f028a8f34fda0d2ddb06db4e001afe14",
+      "extension": ".pdf",
+      "pages": 66,
+      "words": 29208,
+      "empty_pages": [],
+      "id": "S27"
+    },
+    {
+      "path": "ANSI_HL7_V291_2024SEP/V291_CH17_MaterialsMngmt_2024SEP.pdf",
+      "bytes": 1651925,
+      "sha256": "0d794c650fdc84d4c783b9706aa81f5d1d351c951ea023a572359542d922a2f7",
+      "extension": ".pdf",
+      "pages": 72,
+      "words": 33443,
+      "empty_pages": [],
+      "id": "S28"
+    },
+    {
+      "path": "COURSE_PROGRAM_GLOBAL_RELEASE_2019.pdf",
+      "bytes": 358077,
+      "sha256": "5d5005a051263f125912396ca491cd88821cd2dbc900b6536e3743783482fbf6",
+      "extension": ".pdf",
+      "pages": 7,
+      "words": 1260,
+      "empty_pages": [],
+      "id": "S29"
+    },
+    {
+      "path": "Claude_Docs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf",
+      "bytes": 561652,
+      "sha256": "66cbcc06df9271e0bb59986582646f0c4c7c94697554f893f937a5a55cef736d",
+      "extension": ".pdf",
+      "pages": 33,
+      "words": 5048,
+      "empty_pages": [
+        33
+      ],
+      "id": "S30"
+    },
+    {
+      "path": "HL7 FHIR Proficiency Study Guide.pdf",
+      "bytes": 242272,
+      "sha256": "83ad630c6be631e4a608a4a47bbec264715d839a44a82109125eadb87fa7849d",
+      "extension": ".pdf",
+      "pages": 3,
+      "words": 832,
+      "empty_pages": [],
+      "id": "S31"
+    },
+    {
+      "path": "HL7_Fundamentals_Course_Reciept.pdf",
+      "bytes": 311514,
+      "sha256": "bae070e28108a4c6bae3c5099095736f020822af1d33613f81d4e59347baa2bb",
+      "extension": ".pdf",
+      "pages": 2,
+      "words": 510,
+      "empty_pages": [],
+      "id": "S32"
+    },
+    {
+      "path": "HL7glossary_1_.pdf",
+      "bytes": 114512,
+      "sha256": "7adb59f5b087d7025ad4fabe7138e459be62fbbc5d6839f7b42dd7c7e25f62b3",
+      "extension": ".pdf",
+      "pages": 32,
+      "words": 10874,
+      "empty_pages": [],
+      "id": "S33"
+    },
+    {
+      "path": "I-U01-Introduction-Standards-Activity-en-V2026.pdf",
+      "bytes": 643728,
+      "sha256": "0d11ad5fa730afe1d1700d02268287940e6700baa8627e3579a72f98b8fe8a38",
+      "extension": ".pdf",
+      "pages": 6,
+      "words": 936,
+      "empty_pages": [],
+      "id": "S34"
+    },
+    {
+      "path": "I-U03-Introduction-UML-Activity-en-V-2019.pdf",
+      "bytes": 701808,
+      "sha256": "a41b21e5d3afe468819054f1feb8a36f7897413f4447bd119b951d66b018a4c6",
+      "extension": ".pdf",
+      "pages": 7,
+      "words": 806,
+      "empty_pages": [],
+      "id": "S35"
+    },
+    {
+      "path": "SamplePatientsFiles/patient_list_001.xml",
+      "bytes": 1304,
+      "sha256": "40efe3b2f68983c4c3e403f8ab5ed22519dd438df0579197748726edc1390181",
+      "extension": ".xml",
+      "lines": 46,
+      "words": 113,
+      "id": "S36"
+    },
+    {
+      "path": "SamplePatientsFiles/patient_list_002.xml",
+      "bytes": 1727,
+      "sha256": "8510db7849e8e1cbe002e949953d29a744c7fab92e53601c71708a4dc5fb3fcf",
+      "extension": ".xml",
+      "lines": 47,
+      "words": 167,
+      "id": "S37"
+    },
+    {
+      "path": "SamplePatientsFiles/patients.xml",
+      "bytes": 1826,
+      "sha256": "0a0cc5821bcc17d0dab727fd09de7d106b77358064541e9bf87cdc6fe36432df",
+      "extension": ".xml",
+      "lines": 49,
+      "words": 184,
+      "id": "S38"
+    },
+    {
+      "path": "SamplePatientsFiles/patients_schema.xsd",
+      "bytes": 2405,
+      "sha256": "bf8a0210d3ed344db93bad02dc8662071cc81c869c33152bd2bda02ba08e5efd",
+      "extension": ".xsd",
+      "lines": 69,
+      "words": 256,
+      "id": "S39"
+    },
+    {
+      "path": "UNIT_1_READING_MATERIAL_INTRO_TO_STANDARDS_REV_2026.pdf",
+      "bytes": 4305662,
+      "sha256": "6de25ee84f53c9b4ddc43106871aa8b9bbb3efcbc1eb6db6a3d54434b06d9490",
+      "extension": ".pdf",
+      "pages": 44,
+      "words": 12335,
+      "empty_pages": [],
+      "id": "S40"
+    },
+    {
+      "path": "UNIT_2_READING_MATERIAL_INTRO_TO_UML_REV_2026.pdf",
+      "bytes": 3327217,
+      "sha256": "9d8b9cb84611e1a5dbaa4aeab5ac0cdb5f4270a034219f93d669197ac2c9831a",
+      "extension": ".pdf",
+      "pages": 42,
+      "words": 8299,
+      "empty_pages": [],
+      "id": "S41"
+    },
+    {
+      "path": "UNIT_2_READING_MATERIAL_INTRO_TO_XML_REV_2026.pdf",
+      "bytes": 2301020,
+      "sha256": "2c2d8ea95181f359f28c22459dd2790b66596ff8f8fb2c1ce361e1b77262370c",
+      "extension": ".pdf",
+      "pages": 36,
+      "words": 10342,
+      "empty_pages": [],
+      "id": "S42"
+    },
+    {
+      "path": "UNIT_3-U01-V2.x-Introduction-Reading-EN-V_2026.pdf",
+      "bytes": 3337810,
+      "sha256": "afc9820af745526225956c4d9c3bc7c05d39db090fc36a8b3102dc09d584fedc",
+      "extension": ".pdf",
+      "pages": 40,
+      "words": 10317,
+      "empty_pages": [],
+      "id": "S43"
+    },
+    {
+      "path": "UNIT_4-U02-V2.x-ImplementationProcessTools-Reading-REV_2026-B.pdf",
+      "bytes": 2030562,
+      "sha256": "95b411994ef7d94d689249a54b677b940668b9b740f3d5434bb61ca9a34d5cf5",
+      "extension": ".pdf",
+      "pages": 31,
+      "words": 5219,
+      "empty_pages": [
+        1,
+        17,
+        31
+      ],
+      "id": "S44"
+    },
+    {
+      "path": "UNIT_4-U02-V2.x-PatientAdminOrdersResults-Reading-REV_2026-A.pdf",
+      "bytes": 2311551,
+      "sha256": "56dce5726260b632fd22ccb505ad40270a6881c1330d0e63ffdc18ec4f22736a",
+      "extension": ".pdf",
+      "pages": 61,
+      "words": 12612,
+      "empty_pages": [],
+      "id": "S45"
+    },
+    {
+      "path": "UNIT_4-U04-V2.x-Z-Segments-Reading-REV_2026 (1).pdf",
+      "bytes": 798669,
+      "sha256": "1ca50bd777d98e074b724cac1af5e35a4ad695f1a59d267e6dc3f10fa0455c80",
+      "extension": ".pdf",
+      "pages": 11,
+      "words": 1822,
+      "empty_pages": [
+        1
+      ],
+      "id": "S46"
+    },
+    {
+      "path": "UNIT_4-U04-V2.x-Z-Segments-Reading-REV_2026.pdf",
+      "bytes": 798669,
+      "sha256": "1ca50bd777d98e074b724cac1af5e35a4ad695f1a59d267e6dc3f10fa0455c80",
+      "extension": ".pdf",
+      "pages": 11,
+      "words": 1822,
+      "empty_pages": [
+        1
+      ],
+      "id": "S47"
+    },
+    {
+      "path": "UNIT_5-U04-V2.x-XML-Reading-REV_2026.pdf",
+      "bytes": 1009106,
+      "sha256": "a37619b235f50e1738426cf8a52df13f0a3c01067a2dedaa6d4bedaf6db1ec70",
+      "extension": ".pdf",
+      "pages": 29,
+      "words": 6230,
+      "empty_pages": [],
+      "id": "S48"
+    },
+    {
+      "path": "UNIT_6-U01-CDA-Introduction-Reading-REV2026.pdf",
+      "bytes": 1525183,
+      "sha256": "826dcc8b7b9281d1ff624a5e7e3180c57719cacc969dd41d7df9cdd47c5d8559",
+      "extension": ".pdf",
+      "pages": 44,
+      "words": 8211,
+      "empty_pages": [],
+      "id": "S49"
+    },
+    {
+      "path": "UNIT_7-U01-CDA-Architecture-Reading-REV2026.pdf",
+      "bytes": 1572716,
+      "sha256": "e2336116a4a4299bb44c87be2cb25fb526d341778de1cdb578f40c5e285ad0b6",
+      "extension": ".pdf",
+      "pages": 28,
+      "words": 5426,
+      "empty_pages": [],
+      "id": "S50"
+    },
+    {
+      "path": "V-U01-V2.x-Introduction-Activity-appendix_III_V28_events.pdf",
+      "bytes": 137769,
+      "sha256": "eb6fbce186034a89c2351c13fbe36569256af50a1ecd186585e13cf8f5cdd907",
+      "extension": ".pdf",
+      "pages": 10,
+      "words": 3348,
+      "empty_pages": [],
+      "id": "S51"
+    },
+    {
+      "path": "V-U01-V2.x-Introduction-Activity-appendix_II_V28_chapters.pdf",
+      "bytes": 28279,
+      "sha256": "15169fa65930bb8dc40d5f373643b61f687af3f0f1554f4ebf1c9380fc3cbe7f",
+      "extension": ".pdf",
+      "pages": 1,
+      "words": 132,
+      "empty_pages": [],
+      "id": "S52"
+    },
+    {
+      "path": "V-U01-V2.x-Introduction-Activity-appendix_IV_deidentification.pdf",
+      "bytes": 17893,
+      "sha256": "9450dc1134a6b97d955ee793656d3ff5d64c4cb074086e8e217de6d5738b715d",
+      "extension": ".pdf",
+      "pages": 1,
+      "words": 245,
+      "empty_pages": [],
+      "id": "S53"
+    },
+    {
+      "path": "V-U01-V2.x-Introduction-Activity-appendix_V_V28_segments.pdf",
+      "bytes": 172908,
+      "sha256": "645768192faedbad2cb81a32800783ebef511f128685fb8270ae54552cd01f59",
+      "extension": ".pdf",
+      "pages": 13,
+      "words": 3623,
+      "empty_pages": [],
+      "id": "S54"
+    },
+    {
+      "path": "V28_CH03_PatientAdmin.pdf",
+      "bytes": 1416391,
+      "sha256": "a213d62f76432fbe88320d5b9d6bae4df7ef50e0d4eea9d7b39905b50b0fa4fa",
+      "extension": ".pdf",
+      "pages": 179,
+      "words": 88885,
+      "empty_pages": [],
+      "id": "S55"
+    }
+  ]
+}
