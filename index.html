@@ -10,6 +10,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.webgpu.js",
+    "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.webgpu.js",
+    "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.tsl.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+  }
+}
+</script>
 <style>
   :root {
     --bg: #0d0718;
@@ -214,7 +224,9 @@
     text-align: center; overflow: hidden;
     padding: 130px 0 90px;
   }
-  #particles { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+  /* Dark radial vignette; matches the WebGPU particle hero (particle-hero.js), which fades in on top. */
+  .hero { background: radial-gradient(circle at 71% 50%, #1a1129 12svh, var(--bg) 92svh); }
+  @media (max-width: 767px) { .hero { background: radial-gradient(circle at 50% 50%, #1a1129 6svh, var(--bg) 60svh); } }
   .hero-glow {
     position: absolute; left: 50%; top: 42%; width: min(900px, 120vw); height: min(900px, 120vw);
     transform: translate(-50%, -50%); pointer-events: none;
@@ -598,7 +610,6 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero" id="top" aria-label="Course introduction">
-    <canvas id="particles" aria-hidden="true"></canvas>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
       <p class="eyebrow">New course</p>
@@ -1227,7 +1238,6 @@ await client.create('Appointment', {
 
   /* ---------- Sticky purchase pill + nav background ---------- */
   var pill = document.getElementById('sticky-pill');
-  var hero = document.getElementById('top');
   var navEl = document.querySelector('.nav');
   var pillShown = false;
   function onScroll() {
@@ -1321,177 +1331,8 @@ await client.create('Appointment', {
     });
     if (rows.length) show(rows[0]);
   });
-
-  /* ---------- Hero particles (heat-repel field) ----------
-     Idle: nearly frozen -- dots hold their rest position with only a few
-     pixels of very slow drift (a ~25s cycle). No twinkle: size and
-     brightness stay constant per dot.
-     Cursor: dots are repelled within ~300px, forming a round clearing.
-     Each dot carries a persistent heat value that rises fast near the
-     cursor and cools slowly over several seconds. Fast outward spring,
-     slow viscous settle-back. */
-  var canvas = document.getElementById('particles');
-  var ctx = canvas.getContext('2d');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var W = 0, H = 0, parts = [];
-  var REPEL_R = 300;
-
-  function mix(a, b, t) { return a + (b - a) * t; }
-  /* base lavender -> orange (#ff9a5c) -> hot pink (#ff6b8a) */
-  function heatColor(h) {
-    var r, g, b;
-    if (h <= 0.42) {
-      var t = h / 0.42;
-      r = mix(150, 255, t); g = mix(128, 154, t); b = mix(252, 92, t);
-    } else {
-      var t2 = (h - 0.42) / 0.58;
-      r = mix(255, 255, t2); g = mix(154, 107, t2); b = mix(92, 138, t2);
-    }
-    return Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b);
-  }
-
-  /* Pre-rendered soft glow sprites across the heat range: one drawImage per dot. */
-  var HEAT_STEPS = 16, sprites = [], SS = 96;
-  function makeSprite(col) {
-    var sp = document.createElement('canvas');
-    sp.width = SS; sp.height = SS;
-    var g = sp.getContext('2d');
-    var rad = g.createRadialGradient(SS / 2, SS / 2, 0, SS / 2, SS / 2, SS / 2);
-    rad.addColorStop(0, 'rgba(' + col + ',0.95)');
-    rad.addColorStop(0.2, 'rgba(' + col + ',0.62)');
-    rad.addColorStop(0.5, 'rgba(' + col + ',0.20)');
-    rad.addColorStop(1, 'rgba(' + col + ',0)');
-    g.fillStyle = rad; g.fillRect(0, 0, SS, SS);
-    return sp;
-  }
-  (function () {
-    var i;
-    for (i = 0; i < HEAT_STEPS; i++) {
-      sprites.push(makeSprite(heatColor(i / (HEAT_STEPS - 1))));
-    }
-  })();
-
-  var cursor = { x: -9999, y: -9999, active: false };
-
-  function sizeCanvas() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = canvas.clientWidth; H = canvas.clientHeight;
-    canvas.width = Math.floor(W * dpr);
-    canvas.height = Math.floor(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function seed() {
-    parts = [];
-    var count = W >= 1200 ? 170 : (W >= 700 ? 150 : 130);
-    for (var i = 0; i < count; i++) {
-      parts.push({
-        bx: Math.random() * W,
-        by: Math.random() * H,
-        r: 1.2 + Math.random() * 2.2,        /* constant size - no twinkle */
-        alpha: 0.30 + Math.random() * 0.45,  /* constant brightness */
-        driftPhase: Math.random() * Math.PI * 2,
-        driftPhase2: Math.random() * Math.PI * 2,
-        driftAmp: 2 + Math.random() * 4,     /* a few px of movement */
-        driftW1: 0.22 + Math.random() * 0.08, /* ~25s cycles */
-        driftW2: 0.18 + Math.random() * 0.08,
-        ox: 0, oy: 0, vx: 0, vy: 0, heat: 0
-      });
-    }
-  }
-
-  var lastT = -1;
-  function draw(frame) {
-    ctx.clearRect(0, 0, W, H);
-    var t = frame / 1000;
-    var dt = lastT < 0 ? 0.016 : Math.min(0.05, (frame - lastT) / 1000);
-    lastT = frame;
-
-    for (var i = 0; i < parts.length; i++) {
-      var p = parts[i];
-
-      /* idle drift: barely perceptible, no twinkle */
-      var px0 = p.bx + Math.sin(t * p.driftW1 + p.driftPhase) * p.driftAmp;
-      var py0 = p.by + Math.cos(t * p.driftW2 + p.driftPhase2) * p.driftAmp;
-
-      /* repel target + heating, tracking the raw cursor with no lag */
-      var tox = 0, toy = 0, heating = 0;
-      if (cursor.active) {
-        var ddx = (px0 + p.ox) - cursor.x;
-        var ddy = (py0 + p.oy) - cursor.y;
-        var d2 = ddx * ddx + ddy * ddy;
-        if (d2 < REPEL_R * REPEL_R && d2 > 0.01) {
-          var d = Math.sqrt(d2);
-          var close = 1 - d / REPEL_R;
-          heating = close * close;
-          var push = Math.pow(close, 0.7) * REPEL_R * 0.78;
-          tox = (ddx / d) * push;
-          toy = (ddy / d) * push;
-        }
-      }
-
-      /* heat: rises fast when inside the radius, cools slowly over seconds */
-      if (heating > p.heat) {
-        p.heat += (heating - p.heat) * (1 - Math.exp(-dt * 10));
-      } else {
-        p.heat *= Math.exp(-dt * 0.55);
-      }
-
-      /* asymmetric spring: stiff/fast pushing out, soft/slow returning to rest */
-      var displaced = (tox !== 0 || toy !== 0);
-      var stiff = displaced ? 60 : 1.8;   /* px/s^2 per px of error */
-      var damp = displaced ? 9 : 2.7;     /* damping, 1/s */
-      p.vx += (tox - p.ox) * stiff * dt;
-      p.vy += (toy - p.oy) * stiff * dt;
-      var dm = Math.exp(-damp * dt);
-      p.vx *= dm; p.vy *= dm;
-      p.ox += p.vx * dt;
-      p.oy += p.vy * dt;
-
-      var px = px0 + p.ox, py = py0 + p.oy;
-      var si = Math.round(p.heat * (HEAT_STEPS - 1));
-      var size = p.r * 11;
-      ctx.globalAlpha = p.alpha;
-      ctx.drawImage(sprites[si], px - size / 2, py - size / 2, size, size);
-    }
-    ctx.globalAlpha = 1;
-  }
-
-  function loop(frame) {
-    draw(frame || 0);
-    requestAnimationFrame(loop);
-  }
-
-  function setCursor(clientX, clientY) {
-    var rect = canvas.getBoundingClientRect();
-    cursor.x = clientX - rect.left;
-    cursor.y = clientY - rect.top;
-    cursor.active = true;
-  }
-
-  hero.addEventListener('mousemove', function (e) { setCursor(e.clientX, e.clientY); });
-  hero.addEventListener('mouseleave', function () { cursor.active = false; });
-  hero.addEventListener('touchstart', function (e) {
-    var touch = e.touches[0];
-    if (touch) setCursor(touch.clientX, touch.clientY);
-  }, { passive: true });
-  hero.addEventListener('touchmove', function (e) {
-    var touch = e.touches[0];
-    if (touch) setCursor(touch.clientX, touch.clientY);
-  }, { passive: true });
-  hero.addEventListener('touchend', function () { cursor.active = false; });
-  hero.addEventListener('touchcancel', function () { cursor.active = false; });
-
-  var resizeT;
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeT);
-    resizeT = setTimeout(function () { sizeCanvas(); seed(); if (reduced) { lastT = -1; draw(0); } }, 150);
-  });
-
-  sizeCanvas();
-  seed();
-  if (reduced) { draw(0); } else { requestAnimationFrame(loop); }
 })();
 </script>
+<script type="module" src="particle-hero-loader.js"></script>
 </body>
 </html>
