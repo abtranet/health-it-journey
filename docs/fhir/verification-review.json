@@ -1,0 +1,368 @@
+{
+  "reviewDate": "2026-10-01",
+  "hapiWithoutAccept": {
+    "request": "https://hapi.fhir.org/baseR4/metadata",
+    "acceptHeaderSent": false,
+    "status": 200,
+    "contentType": "application/fhir+json;charset=utf-8"
+  },
+  "rxnormLookups": [
+    {
+      "rxcui": "29046",
+      "officialProperties": {
+        "properties": {
+          "rxcui": "29046",
+          "name": "lisinopril",
+          "synonym": "",
+          "tty": "IN",
+          "language": "ENG",
+          "suppress": "N",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "rxcui": "104375",
+      "officialProperties": {
+        "properties": {
+          "rxcui": "104375",
+          "name": "lisinopril 2.5 MG Oral Tablet [Zestril]",
+          "synonym": "Zestril 2.5 MG Oral Tablet",
+          "tty": "SBD",
+          "language": "ENG",
+          "suppress": "N",
+          "umlscui": ""
+        }
+      }
+    }
+  ],
+  "lessonVerification": "not performed",
+  "scope": "Read-only capability metadata and terminology properties; no patient reads, resource writes, exercises or sandbox guarantees tested.",
+  "capabilityRequests": [
+    {
+      "label": "hapi",
+      "request": "https://hapi.fhir.org/baseR4/metadata",
+      "method": "GET",
+      "scope": "capability metadata only, no lesson execution",
+      "reviewDate": "2026-10-01",
+      "status": 200,
+      "contentType": "application/fhir+json;charset=utf-8",
+      "resourceType": "CapabilityStatement",
+      "fhirVersion": "4.0.1",
+      "software": {
+        "name": "HAPI FHIR Server",
+        "version": "8.13.10-SNAPSHOT/6bd250944e/2026-09-25"
+      },
+      "declaredSystemInteractions": [
+        "history-system",
+        "transaction"
+      ],
+      "declaredRelevantOperations": [
+        "export",
+        "export-poll-status"
+      ],
+      "declaredConditionalSupport": {
+        "Appointment": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Consent": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Encounter": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Observation": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Patient": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Provenance": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Slot": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Subscription": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        }
+      },
+      "observationPatientSearchDeclared": true
+    },
+    {
+      "label": "firely",
+      "request": "https://server.fire.ly/R4/metadata",
+      "method": "GET",
+      "scope": "capability metadata only, no lesson execution",
+      "reviewDate": "2026-10-01",
+      "status": 200,
+      "contentType": "application/fhir+json; fhirVersion=4.0; charset=utf-8",
+      "resourceType": "CapabilityStatement",
+      "fhirVersion": "4.0.1",
+      "software": {
+        "name": "Firely Server",
+        "version": "6.10.0+85497ec0fbbebba6d026fcb7f8ca70efc9955b69",
+        "releaseDate": "2026-09-24T11:12:50+00:00"
+      },
+      "declaredSystemInteractions": [
+        "batch",
+        "history-system",
+        "search-system",
+        "transaction"
+      ],
+      "declaredRelevantOperations": [
+        "expand",
+        "export",
+        "translate",
+        "validate",
+        "validate-code"
+      ],
+      "declaredConditionalSupport": {
+        "Appointment": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Consent": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Encounter": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Observation": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Patient": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Provenance": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Slot": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        },
+        "Subscription": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned"
+        }
+      },
+      "observationPatientSearchDeclared": true
+    },
+    {
+      "label": "smart",
+      "request": "https://r4.smarthealthit.org/metadata",
+      "method": "GET",
+      "scope": "capability metadata only, no lesson execution",
+      "reviewDate": "2026-10-01",
+      "status": 200,
+      "contentType": "application/fhir+json;charset=utf-8",
+      "resourceType": "CapabilityStatement",
+      "fhirVersion": "4.0.0",
+      "software": {
+        "name": "Smile CDR",
+        "version": "2019.08.PRE"
+      },
+      "declaredSystemInteractions": [
+        "history-system",
+        "transaction"
+      ],
+      "declaredRelevantOperations": [
+        "expand",
+        "translate",
+        "validate",
+        "validate-code"
+      ],
+      "declaredConditionalSupport": {
+        "Appointment": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Consent": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Encounter": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Observation": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Patient": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Provenance": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Slot": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        },
+        "Subscription": {
+          "conditionalCreate": true,
+          "conditionalUpdate": true,
+          "versioning": "versioned-update"
+        }
+      },
+      "observationPatientSearchDeclared": true
+    },
+    {
+      "label": "bulk",
+      "request": "https://bulk-data.smarthealthit.org/fhir/metadata",
+      "method": "GET",
+      "scope": "capability metadata only, no lesson execution",
+      "reviewDate": "2026-10-01",
+      "status": 200,
+      "contentType": "application/fhir+json; charset=utf-8",
+      "resourceType": "CapabilityStatement",
+      "fhirVersion": "4.0.1",
+      "software": {
+        "name": "SMART Sample Bulk Data Server",
+        "version": "2.1.1"
+      },
+      "declaredSystemInteractions": [],
+      "declaredRelevantOperations": [
+        "export"
+      ],
+      "declaredConditionalSupport": {
+        "Encounter": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Observation": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Patient": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        }
+      },
+      "observationPatientSearchDeclared": true
+    },
+    {
+      "label": "ontoserver",
+      "request": "https://r4.ontoserver.csiro.au/fhir/metadata",
+      "method": "GET",
+      "scope": "capability metadata only, no lesson execution",
+      "reviewDate": "2026-10-01",
+      "status": 200,
+      "contentType": "application/fhir+json;charset=UTF-8",
+      "resourceType": "CapabilityStatement",
+      "fhirVersion": "4.0.1",
+      "software": {
+        "extension": [
+          {
+            "url": "http://ontoserver.csiro.au/profiles/ontoserver-versions",
+            "extension": [
+              {
+                "url": "snomedIndexVersion",
+                "valueString": "2.0.15"
+              },
+              {
+                "url": "loincIndexVersion",
+                "valueString": "2.0.7"
+              },
+              {
+                "url": "fhirIndexVersion",
+                "valueString": "2.9.2"
+              }
+            ]
+          }
+        ],
+        "name": "Ontoserver\u00ae",
+        "version": "6.29.1-SNAPSHOT",
+        "releaseDate": "2026-09-25T10:29:22+10:00"
+      },
+      "declaredSystemInteractions": [
+        "batch"
+      ],
+      "declaredRelevantOperations": [],
+      "declaredConditionalSupport": {
+        "Appointment": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Consent": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Encounter": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Observation": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Patient": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Provenance": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Slot": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": null
+        },
+        "Subscription": {
+          "conditionalCreate": null,
+          "conditionalUpdate": null,
+          "versioning": "versioned-update"
+        }
+      },
+      "observationPatientSearchDeclared": false
+    }
+  ]
+}

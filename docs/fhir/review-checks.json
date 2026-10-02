@@ -1,0 +1,18 @@
+{
+  "reviewDate": "2026-10-01",
+  "scope": "Documentation checks only; no lesson validator or full FHIR validation run",
+  "sourceFiles": 1,
+  "sourceLines": 929,
+  "proposedUnits": 17,
+  "proposedFundamentals": 4,
+  "proposedProjectMilestones": 13,
+  "jsonBlocks": 9,
+  "jsonParsePass": 7,
+  "jsonParseFail": 2,
+  "parsedResourceExamples": 5,
+  "canonicalSourceNeededTodos": 14,
+  "technicalFindings": 30,
+  "sourceUnchanged": true,
+  "lessonContentWritten": false,
+  "publicSandboxWrites": 0
+}

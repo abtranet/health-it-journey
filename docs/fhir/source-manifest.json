@@ -1,0 +1,325 @@
+{
+  "sha256": "9ccbe9bc9dc187d8d01fd52ae793676b205bbb45fca33a3e4ddbe0a4f28e92e0",
+  "lines": 929,
+  "bytes": 67287,
+  "words": 9297,
+  "sourcePath": "/Users/abdeltraore/Downloads/fhir-course-material.md",
+  "sourceType": "md",
+  "reviewDate": "2026-10-01",
+  "sourceCopiedIntoRepository": false,
+  "reason": "Identity-like values require synthetic provenance/redaction review",
+  "sections": [
+    {
+      "sourceLesson": 5,
+      "proposedUnit": "F01",
+      "startLine": 38,
+      "endLine": 105,
+      "words": 583
+    },
+    {
+      "sourceLesson": 6,
+      "proposedUnit": "F02",
+      "startLine": 106,
+      "endLine": 160,
+      "words": 528
+    },
+    {
+      "sourceLesson": 7,
+      "proposedUnit": "F03",
+      "startLine": 161,
+      "endLine": 212,
+      "words": 583
+    },
+    {
+      "sourceLesson": 8,
+      "proposedUnit": "F04",
+      "startLine": 213,
+      "endLine": 286,
+      "words": 587
+    },
+    {
+      "sourceLesson": 9,
+      "proposedUnit": "F05",
+      "startLine": 287,
+      "endLine": 343,
+      "words": 566
+    },
+    {
+      "sourceLesson": 17,
+      "proposedUnit": "F06",
+      "startLine": 697,
+      "endLine": 747,
+      "words": 517
+    },
+    {
+      "sourceLesson": 10,
+      "proposedUnit": "F07",
+      "startLine": 344,
+      "endLine": 396,
+      "words": 503
+    },
+    {
+      "sourceLesson": 11,
+      "proposedUnit": "F08",
+      "startLine": 397,
+      "endLine": 452,
+      "words": 492
+    },
+    {
+      "sourceLesson": 12,
+      "proposedUnit": "F09",
+      "startLine": 453,
+      "endLine": 505,
+      "words": 496
+    },
+    {
+      "sourceLesson": 13,
+      "proposedUnit": "F10",
+      "startLine": 506,
+      "endLine": 550,
+      "words": 505
+    },
+    {
+      "sourceLesson": 14,
+      "proposedUnit": "F11",
+      "startLine": 551,
+      "endLine": 595,
+      "words": 567
+    },
+    {
+      "sourceLesson": 15,
+      "proposedUnit": "F12",
+      "startLine": 596,
+      "endLine": 650,
+      "words": 502
+    },
+    {
+      "sourceLesson": 19,
+      "proposedUnit": "F13",
+      "startLine": 794,
+      "endLine": 850,
+      "words": 535
+    },
+    {
+      "sourceLesson": 16,
+      "proposedUnit": "F14",
+      "startLine": 651,
+      "endLine": 696,
+      "words": 499
+    },
+    {
+      "sourceLesson": 18,
+      "proposedUnit": "F15",
+      "startLine": 748,
+      "endLine": 793,
+      "words": 518
+    },
+    {
+      "sourceLesson": 20,
+      "proposedUnit": "F16",
+      "startLine": 851,
+      "endLine": 884,
+      "words": 481
+    },
+    {
+      "sourceLesson": 21,
+      "proposedUnit": "F17",
+      "startLine": 885,
+      "endLine": 916,
+      "words": 357
+    }
+  ],
+  "codeBlocks": [
+    {
+      "tag": "json",
+      "start": 55,
+      "end": 76,
+      "parses": true,
+      "resourceType": "Patient"
+    },
+    {
+      "tag": "bash",
+      "start": 81,
+      "end": 85
+    },
+    {
+      "tag": "bash",
+      "start": 130,
+      "end": 137
+    },
+    {
+      "tag": "bash",
+      "start": 181,
+      "end": 188
+    },
+    {
+      "tag": "json",
+      "start": 235,
+      "end": 245,
+      "parses": false,
+      "errorLine": 236,
+      "errorType": "Extra data"
+    },
+    {
+      "tag": "bash",
+      "start": 250,
+      "end": 255
+    },
+    {
+      "tag": "json",
+      "start": 261,
+      "end": 265,
+      "parses": true,
+      "resourceType": null
+    },
+    {
+      "tag": "",
+      "start": 311,
+      "end": 320
+    },
+    {
+      "tag": "",
+      "start": 357,
+      "end": 360
+    },
+    {
+      "tag": "bash",
+      "start": 365,
+      "end": 372
+    },
+    {
+      "tag": "json",
+      "start": 416,
+      "end": 429,
+      "parses": false,
+      "errorLine": 417,
+      "errorType": "Expecting value"
+    },
+    {
+      "tag": "json",
+      "start": 466,
+      "end": 482,
+      "parses": true,
+      "resourceType": "MedicationRequest"
+    },
+    {
+      "tag": "bash",
+      "start": 523,
+      "end": 528
+    },
+    {
+      "tag": "bash",
+      "start": 616,
+      "end": 620
+    },
+    {
+      "tag": "json",
+      "start": 624,
+      "end": 629,
+      "parses": true,
+      "resourceType": null
+    },
+    {
+      "tag": "bash",
+      "start": 666,
+      "end": 674
+    },
+    {
+      "tag": "json",
+      "start": 710,
+      "end": 724,
+      "parses": true,
+      "resourceType": "Provenance"
+    },
+    {
+      "tag": "json",
+      "start": 761,
+      "end": 768,
+      "parses": true,
+      "resourceType": "Subscription"
+    },
+    {
+      "tag": "json",
+      "start": 807,
+      "end": 819,
+      "parses": true,
+      "resourceType": "Consent"
+    },
+    {
+      "tag": "",
+      "start": 823,
+      "end": 829
+    }
+  ],
+  "lastVerifiedClaims": [
+    [
+      40,
+      "2026-10-02"
+    ],
+    [
+      108,
+      "2026-10-02"
+    ],
+    [
+      163,
+      "2026-10-02"
+    ],
+    [
+      215,
+      "2026-10-02"
+    ],
+    [
+      289,
+      "2026-10-02"
+    ],
+    [
+      346,
+      "2026-10-02"
+    ],
+    [
+      399,
+      "2026-10-02"
+    ],
+    [
+      455,
+      "2026-10-02"
+    ],
+    [
+      508,
+      "2026-10-02"
+    ],
+    [
+      553,
+      "2026-10-02"
+    ],
+    [
+      598,
+      "2026-10-02"
+    ],
+    [
+      653,
+      "2026-10-02"
+    ],
+    [
+      699,
+      "2026-10-02"
+    ],
+    [
+      750,
+      "2026-10-02"
+    ],
+    [
+      796,
+      "2026-10-02"
+    ],
+    [
+      853,
+      "2026-10-02"
+    ],
+    [
+      887,
+      "2026-10-02"
+    ]
+  ],
+  "lessonVerificationPerformed": false
+}
