@@ -12,4 +12,4 @@ Static files deployed directly to Vercel (`health-it-journey` project, productio
 - `index.html` — the full landing page (single file; the hero illustration loads from the live Vercel deployment)
 
 ## Hero fireball
-The hero background is a port of the WebGPU & TSL fireball from three.js Journey: 6000 GPU-simulated spheres that heat up when the cursor pushes them. It loads three.js r184 from jsDelivr and only runs where WebGPU is available (and motion isn't reduced); other browsers keep the 2D particle field.
+The hero background is a port of the WebGPU & TSL fireball from three.js Journey: 6000 GPU-simulated spheres that heat up when the cursor pushes them. It loads three.js r184 from jsDelivr and only runs where WebGPU is available (and motion isn't reduced); other browsers keep the 2D particle field. While nobody is stirring it, a ghost cursor sweeps through the ball every few seconds so it flares on its own, and on desktop a small hint under the ball invites visitors to move their cursor through it.

@@ -7,7 +7,24 @@
   /* The fireball hero gets a left-aligned layout on wide screens; decide before first paint. */
   if ('gpu' in navigator && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.add('webgpu-hero');
+    /* start fetching three.js now so the fireball appears before visitors scroll away */
+    ['three.webgpu.min.js', 'three.tsl.min.js'].forEach(function (file) {
+      var link = document.createElement('link');
+      link.rel = 'modulepreload';
+      link.href = 'https://cdn.jsdelivr.net/npm/three@0.184.0/build/' + file;
+      document.head.appendChild(link);
+    });
   }
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.webgpu.min.js",
+    "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.webgpu.min.js",
+    "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.tsl.min.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+  }
+}
 </script>
 <meta name="color-scheme" content="dark" />
 <link rel="icon" href="data:," />
@@ -249,6 +266,23 @@
     .webgpu-hero .hero-cta, .webgpu-hero .stats { justify-content: flex-start; }
     .webgpu-hero .stats li { align-items: flex-start; text-align: left; }
   }
+  /* Desktop hint under the ball; positioned from JS, dismissed on first stir */
+  .fireball-hint {
+    position: absolute; z-index: 2; left: var(--hint-x, 70%); top: var(--hint-y, 80%);
+    transform: translate(-50%, 8px); margin: 0; pointer-events: none;
+    display: none; align-items: center; gap: 9px;
+    font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.06em; color: var(--lavender);
+    padding: 8px 14px; border-radius: 999px;
+    background: rgba(13, 7, 24, 0.55); border: 1px solid rgba(185, 168, 255, 0.22);
+    opacity: 0; transition: opacity 0.6s ease 1.2s, transform 0.6s ease 1.2s;
+  }
+  .fireball-hint svg { width: 14px; height: 14px; animation: hint-nudge 1.6s ease-in-out infinite; }
+  @keyframes hint-nudge { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(5px, -4px); } }
+  @media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+    .webgpu-hero .fireball-hint { display: inline-flex; }
+  }
+  .hero.has-fireball .fireball-hint { opacity: 1; transform: translate(-50%, 0); }
+  .hero.has-fireball .fireball-hint.is-dismissed { opacity: 0; transition-delay: 0s; }
   .hero.has-fireball h1,
   .hero.has-fireball .hero-sub,
   .hero.has-fireball .stats { text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5); }
@@ -636,6 +670,10 @@
       <canvas></canvas>
       <div class="hero-fireball-overlay"></div>
     </div>
+    <p class="fireball-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 7.5-6.2 1.6L9.6 18z"/></svg>
+      Move your cursor through the fireball
+    </p>
     <div class="hero-inner">
       <p class="eyebrow">New course</p>
       <h1>HL7 &amp; FHIR</h1>
@@ -1535,16 +1573,6 @@ await client.create('Appointment', {
      shoves them, and every push or collision heats them to a glowing
      orange that cools over a few seconds. GPU compute only, so it runs
      where WebGPU is available; other browsers keep the 2D particle field. -->
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.webgpu.min.js",
-    "three/webgpu": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.webgpu.min.js",
-    "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.tsl.min.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
-  }
-}
-</script>
 <script type="module">
 const hero = document.getElementById('top');
 const container = hero && hero.querySelector('.hero-fireball');
@@ -1616,13 +1644,52 @@ async function startFireball() {
     ndc: new THREE.Vector2(),
     plane: new THREE.Plane(camera.position.clone().normalize(), 0),
     intersect: new THREE.Vector3(),
+    probe: new THREE.Vector3(),
     sampled: false
   };
   window.addEventListener('pointermove', (event) => {
     const rect = canvas.getBoundingClientRect();
     cursor.ndc.x = (event.clientX - rect.left) / rect.width * 2 - 1;
     cursor.ndc.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    /* only a pointer at the ball counts as stirring; elsewhere the sweeps go on */
+    cursor.raycaster.setFromCamera(cursor.ndc, camera);
+    if (!cursor.raycaster.ray.intersectPlane(cursor.plane, cursor.probe) ||
+        cursor.probe.length() > BALL_RADIUS + 1.5) return;
+    attract.lastUserMove = performance.now();
+    /* a real stir (not a stray move): the hint has done its job */
+    attract.stirred += Math.hypot(event.movementX || 0, event.movementY || 0);
+    if (hint && attract.stirred > 120) hint.classList.add('is-dismissed');
+    if (attract.sweepStart >= 0) {
+      /* the visitor took over mid-sweep: hand the cursor back without a jump */
+      attract.sweepStart = -1;
+      cursor.sampled = false;
+    }
   });
+
+  /* Attract mode: many visitors never move the mouse over the hero (and
+     on phones a touch turns into a scroll), so while nobody is stirring
+     the ball a ghost cursor sweeps through it every few seconds and it
+     flares up on its own. */
+  const BALL_RADIUS = 2.75;
+  const SWEEP_MS = 1000;
+  const attract = {
+    lastUserMove: -Infinity,
+    sweepStart: -1,
+    nextSweep: Infinity, /* armed once the canvas is visible */
+    direction: 1,
+    stirred: 0, /* px the visitor has moved over the ball */
+    from: new THREE.Vector3(),
+    to: new THREE.Vector3()
+  };
+  const startSweep = (now) => {
+    const reach = BALL_RADIUS * 2.6;
+    attract.from.set(-reach * attract.direction, (Math.random() - 0.5) * 3, 0);
+    attract.to.set(reach * attract.direction, (Math.random() - 0.5) * 3, 0);
+    attract.direction *= -1;
+    attract.sweepStart = now;
+    cursor.sampled = false;
+  };
+  const hint = hero.querySelector('.fireball-hint');
 
   /* Particles */
   const positionsBuffer = instancedArray(count, 'vec3');
@@ -1750,6 +1817,8 @@ async function startFireball() {
       const textRight = innerRect.left - rect.left + parseFloat(getComputedStyle(inner).paddingLeft) + FIREBALL_TEXT_COLUMN;
       const centerX = Math.min(rect.width - ballRadius - 24, Math.max(rect.width * 0.66, textRight + ballRadius + 40));
       camera.setViewOffset(rect.width, rect.height, rect.width / 2 - centerX, 0, rect.width, rect.height);
+      hero.style.setProperty('--hint-x', centerX + 'px');
+      hero.style.setProperty('--hint-y', Math.min(rect.height / 2 + ballRadius + 24, rect.height - 110) + 'px');
     }
     camera.updateProjectionMatrix();
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -1761,8 +1830,25 @@ async function startFireball() {
 
   /* Loop */
   const tick = () => {
-    cursor.raycaster.setFromCamera(cursor.ndc, camera);
-    cursor.raycaster.ray.intersectPlane(cursor.plane, cursor.intersect);
+    const now = performance.now();
+    const idle = now - attract.lastUserMove > 3000;
+    if (idle && attract.sweepStart < 0 && now >= attract.nextSweep) startSweep(now);
+
+    if (attract.sweepStart >= 0) {
+      const t = (now - attract.sweepStart) / SWEEP_MS;
+      if (t >= 1) {
+        attract.sweepStart = -1;
+        attract.nextSweep = now + 6000;
+        cursor.sampled = false;
+      } else {
+        /* ease in-out: the ghost speeds up through the middle of the ball */
+        cursor.intersect.lerpVectors(attract.from, attract.to, 0.5 - 0.5 * Math.cos(Math.PI * t));
+      }
+    }
+    if (attract.sweepStart < 0) {
+      cursor.raycaster.setFromCamera(cursor.ndc, camera);
+      cursor.raycaster.ray.intersectPlane(cursor.plane, cursor.intersect);
+    }
     if (cursor.sampled) cursorVelocity.value.copy(cursor.intersect).sub(cursorPosition.value);
     else cursorVelocity.value.set(0, 0, 0);
     cursorPosition.value.copy(cursor.intersect);
@@ -1790,6 +1876,8 @@ async function startFireball() {
   }).observe(container);
 
   hero.classList.add('has-fireball');
+  /* first flare shortly after the fade-in, while the ball is still forming */
+  attract.nextSweep = performance.now() + 1600;
 }
 </script>
 </body>
